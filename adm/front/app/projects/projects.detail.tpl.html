@@ -1,0 +1,108 @@
+<section layout="row" flex >
+	<md-content  layout="column" flex >
+		<md-toolbar>
+	   		<div layout="row" layout-align="space-between center" class="md-toolbar-tools" >
+	   			<div layout ="row" layout-align="start center" >
+				   	<md-button class="md-icon-button" ng-click="ctrl.goBack()" aria-label="Toggle Menu">
+			          <span class ="fa fa-arrow-left fa-fw fa-lg"></span>
+			        </md-button>
+
+			       	<h2 class="md-toolbar-item md-breadcrumb md-headline">
+			            <span class="md-breadcrumb-page">
+			             	{{ctrl.one.name}}
+			           	</span>
+			       	</h2>
+			    </div>
+		    </div>
+		</md-toolbar>
+
+		<md-content layout-padding="" layout="column">
+			<form name="formDetalle" ng-submit="formDetalle.$valid && ctrl.guardar()" novalidate>
+		        <div  layout="row" layout-xs="column" flex="100">
+		        	<div layout="column" flex="50">
+		        		
+			          	<md-input-container class="md-block" >
+				       		<label>Nombre</label>
+				            <input type="text" ng-model="ctrl.one.name" required >
+				       	</md-input-container>
+
+
+			          	<md-input-container class="md-block" flex="30" flex-xs="100">
+				          	<label>Inicio</label>                  
+				          	<md-datepicker ng-model="ctrl.one.start_date" ></md-datepicker>
+				        </md-input-container>
+
+				       	<md-input-container class="md-block" flex>
+				           	<label>Descripción</label>
+				           	<input type="text" ng-model="ctrl.one.description" required>
+				       	</md-input-container>
+
+		        	</div>
+
+		          <div layout="column" flex="50">
+		            <img ng-src="{{imgProyect.compressed.dataURL}}" /> <!-- just do a console.log of {{image1}} to see what other options are in the file object 
+ng-if="!ctrl.one.id" 
+		        -->
+		            <input ng-show="!ctrl.one.id" id="inputImageProyect" type="file" accept="image/*" image="imgProyect" resize-max-height="1000" resize-max-width="1000" resize-quality="0.7" resize-type="image/jpg" /> 
+		          </div>
+		        </div>
+
+		        <md-content class="md-padding" layout-xs="column" layout="row">
+		        	<div flex-xs flex-gt-xs="50" layout="column">
+			        	<md-card ng-repeat="evento in ctrl.listaEventos" ng-if="$even">
+					       	<img ng-src="http://agrimek.local/img/{{evento.image}}" class="md-card-image" alt="Washed Out">
+					        <md-card-title>
+					          <md-card-title-text>
+					            <span class="md-headline">{{evento.name}}</span>
+					            <span class="md-subhead">{{evento.date | dateToISO | date:"dd-MM-yyyy"}}</span>
+					          </md-card-title-text>
+					        </md-card-title>
+
+					          <md-card-content>
+					            <p>
+					            	{{evento.description}}
+					            </p>
+					          </md-card-content>
+					        <md-card-actions layout="row" layout-align="end center">
+					          <md-button ng-if="!evento.id" ng-click="ctrl.eventDialog(evento)">Agregar</md-button>
+					          <!--<md-button ng-if="evento.id" ng-click="ctrl.eventDialog(evento)">Editar</md-button>-->
+					          <md-button ng-if="evento.id" ng-click="ctrl.deleteEvent(evento)">Eliminar</md-button>
+					        </md-card-actions>
+					   	</md-card>
+				   	</div>
+
+				   	<div flex-xs flex-gt-xs="50" layout="column">
+			        	<md-card ng-repeat="evento in ctrl.listaEventos" ng-if="$odd">
+					       	<img ng-src="http://agrimek.local/img/{{evento.image}}" class="md-card-image" alt="Washed Out">
+					        <md-card-title>
+					          <md-card-title-text>
+					            <span class="md-headline">{{evento.name}}</span>
+					            <span class="md-subhead">{{evento.date | dateToISO | date:"dd-MM-yyyy"}}</span>
+					          </md-card-title-text>
+					        </md-card-title>
+
+					          <md-card-content>
+					            <p>
+					            	{{evento.description}}
+					            </p>
+					          </md-card-content>
+					        <md-card-actions layout="row" layout-align="end center">
+					          <md-button ng-if="!evento.id" ng-click="ctrl.eventDialog(evento)">Agregar</md-button>
+					          <!--<md-button ng-if="evento.id" ng-click="ctrl.eventDialog(evento)">Editar</md-button>-->
+					          <md-button ng-if="evento.id" ng-click="ctrl.deleteEvent(evento)">Eliminar</md-button>
+					        </md-card-actions>
+					   	</md-card>
+				   	</div>
+
+		        </md-content>
+			</form>
+		</md-content >
+	</md-content>
+
+	<md-content >
+	  <md-button class="md-fab md-accent md-fab-bottom-right" aria-label="New" style="position:fixed !important;" ng-click="ctrl.guardar()">
+	    <md-tooltip md-direction="top">Guardar</md-tooltip>
+	    <span class ="fa fa-save fx-fw" style="font-size: 20px;"></span>
+	  </md-button>
+	</md-content>
+</section>

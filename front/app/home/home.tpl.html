@@ -1,0 +1,142 @@
+<!-- main -->
+    <div class="micontenedor " id="inicio">
+      <img src="img/web-min/home_main-min.jpg" class="img-fluid" style="width:100%;" alt="home">
+
+      <div class="carousel-caption " >
+        <h1 class="font-weight-bold" style="color:white; font:bold; ">AGRIMEK</h2>
+        <h3 class="font-weight-bold" style="color:white; font:bold; ">Agrícola, Mecánica y Construcción, C.A</h2>
+        <h3 style="color:white; font:bold; ">RIF: J-412489321</h3>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- QUIENES SOMOS -->
+    <div class="micontenedor" id="quienes">
+      <img src="img/web-min/home_01-min.jpg" class="img-fluid" style="width:100%;" alt="quienes-somos">
+      <div class="carousel-caption caption-right" >
+        <h2 class="font-weight-bold" style="color:white; font:bold">¿QUIENES SOMOS?</h2>
+        <h4 style="color:white; ">
+          Somos un grupo empresarial con espíritu de grandes pensamientos, con la habilidad para innovar y crear nuevas realidades para el desarrollo de la Agro-Industria en Venezuela.</br>
+          La inversión responsable en cada uno de los eslabones de las cadenas de valor de los sectores agropecuario, energía e industria, cada uno con necesidades y oportunidades, las cuales abordamos con soluciones y estrategias hechas a la medida del modelo de negocio de nuestro país.
+
+        </h4>
+      </div>
+        
+    </div>
+
+    <!-- MISION VISION -->
+    <div class="micontenedor " id="mision">
+      <img src="img/web-min/home_02-min.jpg" class="img-fluid" style="width:100%;" alt="mision-vision">
+        <div class="carousel-caption caption-left " >
+        <h2 class="display-3 font-weight-bold" style="color:white; font:bold">MISIÓN - VISIÓN</h2>
+        
+        <h4 style="color:white; ">
+          Somos un grupo integral que agrega valor a la cadena de abastecimiento agropecuaria, a través de productos y servicios eficientes y de calidad.
+
+          </br>
+          </br>
+          Diversificarnos y consolidarnos, a través de Cultura Organizacional que nos permita trascender dentro de la Cadena de Abastecimiento Agropecuaria y Agroindustrial con la ejecución de proyectos de obras civiles en general
+
+        </h4>
+      </div>
+    </div>
+
+
+    <!-- PROYECTOS -->
+    <div class="album py-5 bg-dark" id="misproyectos">
+  
+      <div class="carousel-caption-center" id="proyectos">
+        <h2 class=" display-3 font-weight-bold" style="color:white; font:bold">PROYECTOS RECIENTES</h2>
+      </div>
+    
+      <div class="container pt-3">
+
+        <div class="card-deck" >
+
+          <!---
+          -->
+          <div class="col-md-4" ng-repeat="proyecto in ctrl.listaProyectos">
+            <div class="card mb-4 shadow-sm text-center">
+              <!--
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>{{proyecto.name}}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{proyecto.name}}</text></svg>
+              -->
+              <img ng-src="http://agrimek.local/img/{{proyecto.image}}"  class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{proyecto.name}}</h5>
+
+                <p class="card-text">{{proyecto.description}}</p>
+
+                <button type="button" class="btn btn-sm btn-outline-secondary" ng-click="ctrl.verProyecto(proyecto)">Ver Proyecto</button>
+
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- SERVICIOS -->
+    <div class="micontenedor "id="servicios">
+      <img src="img/web-min/home_03-min.jpg" class="img-fluid" style="width:100%;" alt="nuestros-servicios">
+        <div class="carousel-caption caption-right " >
+        <h2 class="display-3 font-weight-bold" style="color:white; font:bold">NUESTROS SERVICIOS</h2>
+        <p >
+          <span>
+
+          Agrimek ofrece sus servicios de construcción en todo tipo de obras de infraestructura, públicas y privadas, tales como:
+        </br>
+              Puentes,
+              Muelles,
+              Obras Viales (Autopistas, autovías, rutas, carreteras, etc.),
+              Obras marítimas,
+              Obras hidráulicas,
+              Edificios,
+              Viviendas,
+              Estructuras metálicas,
+              Obras civiles en general,
+              Estudios topográficos, 
+              Preparación de terrenos para el cultivo de distintos rubros,
+              Asesoramiento en ganadería vacuna, bufalina, caprina, ovina y caballar,
+              Importacion y exportación de bienes,
+              Transporte terrestre y marítimo.
+            </span>
+          </p>
+      </div>
+    </div>
+    
+    <!-- CONTACTENOS -->
+    <div class="micontenedor " id="contactanos">
+      <img src="img/web-min/home_04-min.jpg" class="img-fluid" style="width:100%;" alt="contactanos">
+        <div class="carousel-caption caption-left ">
+        <h2 class="display-3 font-weight-bold" style="color:white; font:bold">CONTACTANOS</h2>
+        <h4 style="color:white; ">Dirección: Carretera Nacional Local s/n Sector Paloma Tucupita Delta Amacuro, ZP: 6401</h4>
+        <h4 style="color:white; ">Teléfonos: 0412-6083749 / 0416-6872569</h4>
+        <h4 style="color:white; ">Email: agrimek.delta@gmail.com</h4>
+      </div>
+    </div>    
+  
+    <!-- FOOTER -->
+    <footer class="page-footer font-small blue pt-4">
+
+      <div class="container-fluid text-center ">
+        <div class="row">
+          <div class="col-12">
+            <span><b>Agrícola, Mecánica y Construcción, C.A.</b></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+      2019 &#169 Agrimek. Todos los derechos reservados
+    </div>
+  

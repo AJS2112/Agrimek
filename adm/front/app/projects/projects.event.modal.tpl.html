@@ -1,0 +1,48 @@
+<md-dialog aria-label="Cliente" class="_md-transition-in" flex-xs="100" flex="60">
+	<form name="formDetalle" ng-submit="formDetalle.$valid && ctrl.guardar()" novalidate>
+	    <md-toolbar>
+	      <div class="md-toolbar-tools">
+	        <span flex="100">Evento</span>
+	      </div>
+	    </md-toolbar>
+
+	    <md-dialog-content class="md-dialog-content md-padding" layout-xs="column" layout="row">
+	    	
+        <div layout="column" flex="100">
+          <md-input-container class="md-block" >
+            <label>Nombre</label>
+            <input type="text" ng-model="ctrl.one.name" required >
+          </md-input-container>
+
+          <md-input-container class="md-block" >
+            <label>Descripción</label>
+            <input type="text" ng-model="ctrl.one.description" required >
+          </md-input-container>
+
+          <md-input-container class="md-block" flex="30" flex-xs="100">
+            <label>Fecha</label>                  
+            <md-datepicker ng-model="ctrl.one.date" ></md-datepicker>
+          </md-input-container>
+
+          <div>
+            <input  id="inputImage" type="file" accept="image/*" image="image1" resize-max-height="1000" resize-max-width="1000" resize-quality="0.7" resize-type="image/jpg" /> 
+            <img ng-src="{{image1.compressed.dataURL}}" /> <!-- just do a console.log of {{image1}} to see what other options are in the file object -->
+          </div>
+
+          <!--
+          <div>
+          <div>image1: {{image1}}</div>
+          <div>one.image: {{ctrl.one.image}}</div>
+            <input file-model="ctrl.one.image" id="inputImage" type="file" accept="image/*"/> 
+          </div>
+          -->
+        </div>
+
+	    </md-dialog-content>
+
+	    <md-dialog-actions layout="row">
+			<md-button type="button" class="md-raised" ng-click="ctrl.cancel()">Cancelar</md-button> 
+			<md-button type="submit" class="md-raised md-primary"  ng-disabled="!formDetalle.$valid || !ctrl.full">Guardar</md-button>  
+	    </md-dialog-actions>
+	</form>
+</md-dialog>
